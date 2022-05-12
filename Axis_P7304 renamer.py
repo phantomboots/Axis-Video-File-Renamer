@@ -131,13 +131,11 @@ for i in range(len(lvl_three)):
         
     
         
-for k in range(14, len(lvl_three)):
-    counter = 1
+for k in range(0, len(lvl_three)):
     try:
         os.rename(str(lvl_three[k]), str(lvl_three[k].parent) + "\\" + recording_names[k])
     except:
-        counter += 1
-        os.rename(str(lvl_three[k]), str(lvl_three[k].parent) + "\\" + recording_names[k] + "_" + str(counter))
+        os.rename(str(lvl_three[k]), str(lvl_three[k].parent) + "\\" + recording_names[k] + "_" + str(k))
     
 #Clear the entries from the list of third level directories, as these have just beeen renamed. Get the new lvl three directories list
 lvl_three.clear()
